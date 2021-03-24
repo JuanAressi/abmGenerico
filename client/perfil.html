@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./stylePerfil.css">
+    <title>Perfil</title>
+</head>
+<body class="d-flex align-items-center bg-primary">
+    <div class="container bg-white p-5">
+        <h1 class="text-center">¡Bienvenido Administrador!</h1>
+        <p class="lead text-center mb-4">Estos son tus datos</p>
+
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <span id="usuario"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <span id="mail"></span>
+            </div>
+            
+            <div class="form-group mb-5">
+                <label for="telefono">Telefono:</label>
+                <span id="telefono"></span>
+            </div>
+
+            <button id="listaAutos" class="btn btn-block btn-primary mt-5">Ir al ABM</button>
+            
+            <button id="logOut" class="btn btn-block btn-secondary">Salir</button>
+        </form>
+    </div>
+
+    <script src="./js/perfil.js"></script>
+</body>
+</html>

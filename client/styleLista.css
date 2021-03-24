@@ -1,0 +1,22 @@
+#tablaABM .container {
+    width: 1000px;
+    border-radius: 0.5rem;
+    margin: 5rem auto;
+}
+
+thead {
+    text-transform: capitalize;
+}
+
+tbody {
+    cursor: pointer;
+}
+
+button {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.bold {
+    font-weight: bold;
+}

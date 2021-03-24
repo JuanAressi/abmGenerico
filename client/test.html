@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../server/abmGenerico.php" id="phpForm" method="POST">
+        <input type="hidden" name="action" value="" id="action">
+        <input type="text" name="marca" value="1Marca" id="marca">
+        <input type="text" name="modelo" value="2Modelo" id="modelo">
+        <input type="number" name="año" value="9999" id="año">
+        <input type="text" name="color" value="3Color" id="color">
+        <input type="text" name="patente" value="4Patente" id="patente">
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+    <button onclick="InsertarDatos()">Insertar</button>
+    <button onclick="EliminarDatos()">Eliminar</button>
+    <button onclick="ModificarDatos()">Modificar</button>
+    <button onclick="listarItems()">Listar</button>
+    
+
+    <script>
+        // Insertar datos al cargar la pagina
+        window.onload = function() {
+            listarDatos();
+        }
+
+        // Función Insertar datos
+        function InsertarDatos() {
+            let url = '../server/abmGenerico.php?action=agregar';
+    
+            var formElement = document.getElementById('phpForm');
+            formData = new FormData(formElement);
+
+            fetch(url, {  
+                method: 'POST',
+                body: formData 
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err))
+        }
+
+
+        // Función Eliminar datos
+        function EliminarDatos() {
+            let url = '../server/abmGenerico.php?action=eliminar';
+    
+            var formElement = document.getElementById('phpForm');
+            formData = new FormData(formElement);
+
+            fetch(url, {  
+                method: 'POST',
+                body: formData 
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err))
+        }
+
+        
+        // Función Modificar datos
+        function ModificarDatos() {
+            let url = '../server/abmGenerico.php?action=modificar';
+
+            var formElement = document.getElementById('phpForm');
+            formData = new FormData(formElement);
+
+            fetch(url, {  
+                method: 'POST',
+                body: formData 
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err))
+            // listarDatos();
+}
+
+        
+        // Función Insertar datos
+        function listarDatos() {
+            let url = '../server/abmGenerico.php?action=listar';
+
+            fetch(url, {  
+                method: 'GET'
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err))
+        }
+
+    </script>
+</body>
+</html>
